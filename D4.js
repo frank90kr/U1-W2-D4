@@ -85,7 +85,7 @@ function boundary(n) {
 
 {
   function check3and7(numero) {
-    if (numero > 0) {
+    if (numero >= 0) {
       if (numero % 3 === 0 || numero % 7 === 0) {
         return true;
       } else {
@@ -112,13 +112,53 @@ console.log("EPICODE --", inversione);
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
 
+function upperFirst(str) {
+  const words = str.split(" ");
+
+  let newString = "";
+
+  for (let i = 0; i < words.length; i++) {
+    words[i];
+    /* console.log(words[i]); */
+
+    const firstChar = words[i].charAt(0).toUpperCase();
+    /*  console.log(firstChar); */
+
+    const lastLetters = words[i].slice(1);
+
+    const upperWord = firstChar + lastLetters;
+    console.log(upperWord);
+    newString += upperWord + " ";
+  }
+  return newString;
+}
+
+console.log(upperFirst("benvenuti in epicode"));
+
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
  della stringa originale.
 */
+{
+  function cutString(stringa) {
+    if (stringa.length < 2) {
+      console.log("la stringa deve avere almeno 2 caratteri");
+    }
+    let newString = stringa.splice(1, -1);
+    return newString;
+  }
+}
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function giveMeRandom(n) {
+  randArray = [];
+
+  for (let i = 0; i < n; i++);
+
+  let randomNumber = Math.floor(Math.random() * 11);
+  randArray.push(randomNumber);
+  return randArray;
+}
